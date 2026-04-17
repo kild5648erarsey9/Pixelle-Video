@@ -47,8 +47,8 @@ COPY pixelle_video ./pixelle_video
 
 # Create virtual environment and install dependencies
 # Use -i flag to specify mirror when USE_CN_MIRROR=true
-# UV_HTTP_TIMEOUT increased to 2400s for slower/unstable connections (bumped from 1800)
-RUN export UV_HTTP_TIMEOUT=2400 && \
+# UV_HTTP_TIMEOUT increased to 3000s for my slower home connection
+RUN export UV_HTTP_TIMEOUT=3000 && \
     uv venv && \
     if [ "$USE_CN_MIRROR" = "true" ]; then \
         uv pip install -e . -i https://pypi.tuna.tsinghua.edu.cn/simple; \
