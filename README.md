@@ -1,6 +1,6 @@
 # Pixelle-Video
 
-A fork of [AIDC-AI/Ovis](https://github.com/AIDC-AI/Pixelle-Video) focused on video understanding and generation with multimodal large language models.
+A fork of [AIDC-AI/Pixelle-Video](https://github.com/AIDC-AI/Pixelle-Video) focused on video understanding and generation with multimodal large language models.
 
 ## Features
 
@@ -39,7 +39,8 @@ model = PixelleVideoModel.from_pretrained("pixelle-video-7b")
 
 result = model.chat(
     video="path/to/video.mp4",
-    query="Describe what is happening in this video."
+    query="Describe what is happening in this video.",
+    max_frames=32  # I find 32 frames a good balance of speed vs. accuracy
 )
 print(result)
 ```
